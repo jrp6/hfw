@@ -56,6 +56,12 @@ for (let i = 0; i < nStars; i += 1) {
   stars.push(getRandomStarParams());
 }
 
+const headingText = 'Hansen Feng Fuksikapteeniksi';
+const colours = ['white', 'lime', 'yellow', 'orange', 'cyan', 'salmon'];
+const headingHtml = headingText.split('').map(c =>
+    `<span style=\"color: ${colours[getRandomInt(colours.length)]}">${c}</span>`).join('');
+$('#heading').html(headingHtml);
+
 setInterval(() => {
   const toRemove = getRandomInt(stars.length);
   stars.splice(toRemove, 1);
